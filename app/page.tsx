@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Page() {
   return (
@@ -11,7 +11,7 @@ export default function Page() {
       </p>
       <p className="text-lg text-gray-600">
         We welcome contributions! Please visit our GitHub repository to
-        contribute:{" "}
+        contribute:{' '}
         <Link
           href="https://github.com/sanchezyspace/next-template"
           className="text-blue-600 hover:text-blue-300 transition duration-100 ease-in-out"
