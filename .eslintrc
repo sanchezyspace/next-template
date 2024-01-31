@@ -5,5 +5,9 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["next/core-web-vitals", "prettier"]
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ]
 }

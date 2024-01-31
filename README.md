@@ -47,22 +47,22 @@ This template uses [Husky](https://typicode.github.io/husky/#/) to run `lint-sta
 ### How to remove Tailwind CSS
 1. Remove `tailwind.config.js` and `postcss.config.js`.
 2. Run `pnpm remove tailwindcss postcss autoprefixer`.
-3. Remove `@tailwind xxxx;` from `styles/globals.css`.
+3. Remove `@tailwind xxxx;` from `app/globals.css`.
 
 ### How to remove Husky
 If you want to remove husky, you can remove the following code from `package.json`:
-```json
+```jsonc
 // ...
 "scripts": {
     // ...
     "prepare": "husky"
-  },
+},
 
 // ...
-  "lint-staged": {
+"lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --max-warnings 0",
     "app/**": "prettier --write"
-  }
+}
 ```
 
 ### How to change formatting rules
