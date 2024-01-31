@@ -6,23 +6,24 @@ This is a Next.js + TypeScript project template, perfect for starting your new p
 
 ## Getting Started
 
-Insatll [pnpm](https://pnpm.io/) with:
-(You can use `npm` or `yarn` instead)
+1. Install [pnpm](https://pnpm.io/) with:
+(You can use `npm` or `yarn` instead to skip this step)
 ```bash
 npm install -g pnpm
 ```
 
-Install dependencies with:
+2. Create a new project based on this template using:
 ```bash
-pnpm install
+pnpm create next-app -e https://github.com/sanchezyspace/next-template/tree/main/
 ```
 
-Start the development server with:
+3. Start the development server with:
 ```bash
 pnpm run dev
 ```
 
-Visit http://localhost:3000 to view your application in the browser. Edit app/page.tsx for live updates as you code.
+4. Visit http://localhost:3000 to view your application in the browser. 
+Edit app/page.tsx for live updates as you code.
 
 ## Installing recommended extensions
 This template recommends the following extensions for VS Code:
