@@ -26,6 +26,15 @@ pnpm dev
 
 Visit http://localhost:3000 to view your application in the browser. Edit app/page.tsx for live updates as you code.
 
+## Features
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [pnpm](https://pnpm.io/)
+- 
+
 ## Tips
 ### How to remove Tailwind CSS
 1. Remove `tailwind.config.js` and `postcss.config.js`.
