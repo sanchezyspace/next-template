@@ -62,7 +62,7 @@ If you want to remove husky, you can remove the following code from `package.jso
 // ...
 "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --max-warnings 0",
-    "app/**": "prettier --write"
+    "src/app/**": "prettier --write"
 }
 ```
 

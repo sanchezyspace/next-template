@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --max-warnings 0",
-    "format": "prettier app/** --write",
+    "format": "prettier src/app/** --write",
     "prepare": "husky"
   },
   "dependencies": {
@@ -33,6 +33,6 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --max-warnings 0",
-    "app/**": "prettier --write"
+    "src/app/**": "prettier --write"
   }
 }
