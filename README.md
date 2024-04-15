@@ -17,12 +17,17 @@ npm install -g pnpm
 pnpm create next-app -e https://github.com/sanchezyspace/next-template/tree/main/
 ```
 
-3. Start the development server with:
+3. Install dependencies:
+```bash
+pnpm install
+```
+
+4. Start the development server with:
 ```bash
 pnpm run dev
 ```
 
-4. Visit http://localhost:3000 to view your application in the browser. 
+5. Visit http://localhost:3000 to view your application in the browser. 
 Edit app/page.tsx for live updates as you code.
 
 ## Installing recommended extensions
