@@ -2,11 +2,7 @@
 import useAuthUser from '@/hooks/use-auth-user';
 import { useDBPosts } from '@/hooks/use-db-posts';
 import { createDBPost } from '@/stores/firestore/posts';
-import {
-  getDBUser,
-  getDocRef as getUserDocRef
-} from '@/stores/firestore/users';
-import { Timestamp } from 'firebase/firestore';
+import { getDBUser, getUserDocRef } from '@/stores/firestore/users';
 import Image from 'next/image';
 import React, { FormEvent, useEffect, useState } from 'react';
 
@@ -52,7 +48,6 @@ const Page = () => {
     e.preventDefault();
     if (!authUser) return;
     createDBPost({
-      createdAt: Timestamp.now(),
       createdBy: getUserDocRef(authUser.uid),
       deletedAt: null,
       title: '',

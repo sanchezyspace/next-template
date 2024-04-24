@@ -1,7 +1,7 @@
-import { docRef, getDBPosts } from '@/stores/firestore/posts';
+import { postDocRef, getAllDBPosts } from '@/stores/firestore/posts';
 import { DBHookProps } from '@/types/db-hooks-props';
 import { DBPost } from '@/types/db-post';
-import { onSnapshot } from 'firebase/firestore';
+import { onSnapshot, orderBy, query } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
 
 export const useDBPosts = (options: DBHookProps) => {
@@ -10,16 +10,14 @@ export const useDBPosts = (options: DBHookProps) => {
 
   useEffect(() => {
     if (!options.realtime) {
-      getDBPosts().then((posts) => {
+      getAllDBPosts().then((posts) => {
         setPosts(posts);
         setLoading(false);
       });
     } else {
-      onSnapshot(docRef, (snapshot) => {
+      const postQuery = query(postDocRef, orderBy('createdAt', 'desc'));
+      onSnapshot(postQuery, (snapshot) => {
         const posts = snapshot.docs.map((doc) => doc.data() as DBPost);
-        posts.sort((a, b) => {
-          return b.createdAt.toMillis() - a.createdAt.toMillis();
-        });
         setPosts(posts);
         setLoading(false);
       });
