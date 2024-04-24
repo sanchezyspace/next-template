@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 
 // These styles apply to every route in the application
-import '@/globals.css';
+import '@/app/globals.css';
+
+// Initialize firebase app
+require('@/utils/firebase');
 
 export const metadata: Metadata = {
   title: 'sanchezyspace Next.js Template',
