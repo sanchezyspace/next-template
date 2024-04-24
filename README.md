@@ -74,6 +74,7 @@ Now you can use firestore and authentication by importing `db` and `app` from `@
 #### Creating new collections
 1. Create a new collection in console.
 2. Create a new type in `src/types/`
+   
     Example
     ```typescript
     import { DocumentReference, Timestamp } from 'firebase/firestore';
@@ -89,10 +90,12 @@ Now you can use firestore and authentication by importing `db` and `app` from `@
     - Make sure that the type name starts with `DB`.
     - Make sure that the object has `uid` and `createdAt` fields.
     - Use `DocumentReference` for references to other collections.
-3. Define database operations in `src/stores/firestore/`
+4. Define database operations in `src/stores/firestore/`
+   
    Implement essential database operations to handle CRUD actions effectively. These functions are crucial for manipulating and retrieving data from your Firestore database.
-    Example
-    ```typescript
+
+   Example
+   ```typescript
     import { db } from '@/utils/firebase';
     import { DBPost } from '@/types/db-post';
     import {
@@ -183,7 +186,8 @@ Now you can use firestore and authentication by importing `db` and `app` from `@
     - Define custom operations if needed.
     - Do not include `uid` field in Firestore document.
     - Define `withConverter` to convert Firestore document for the type safety.
-4. (Optional) Define React Hooks for the collection in `src/hooks/`
+6. (Optional) Define React Hooks for the collection in `src/hooks/`
+   
     Depending on how components utilize the database, creating custom React hooks can be beneficial. In the example of a custom hook below, you can monitor changes to all documents within a collection as a React state. This is suitable for cases where the collection does not contain a large number of documents.
 
     Example
