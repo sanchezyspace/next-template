@@ -1,9 +1,8 @@
 'use client';
 
 import useAuthUser from '@/hooks/use-auth-user';
-import { createUser, userExists } from '@/stores/firestore/users';
+import { createDBUser, existsDBUser } from '@/stores/firestore/users';
 import { auth } from '@/utils/firebase';
-import { Timestamp } from 'firebase/firestore';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
@@ -20,11 +19,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (authUser !== null) {
-      userExists(authUser?.uid).then((exists) => {
+      existsDBUser(authUser?.uid).then((exists) => {
         if (!exists) {
-          createUser(
+          createDBUser(
             {
-              createdAt: Timestamp.now(),
               userName: '',
               displayName: authUser.displayName,
               email: authUser.email,

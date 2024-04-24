@@ -1,8 +1,11 @@
 'use client';
 import useAuthUser from '@/hooks/use-auth-user';
 import { useDBPosts } from '@/hooks/use-db-posts';
-import { createPost } from '@/stores/firestore/posts';
-import { getUser, getDocRef as getUserDocRef } from '@/stores/firestore/users';
+import { createDBPost } from '@/stores/firestore/posts';
+import {
+  getDBUser,
+  getDocRef as getUserDocRef
+} from '@/stores/firestore/users';
 import { Timestamp } from 'firebase/firestore';
 import Image from 'next/image';
 import React, { FormEvent, useEffect, useState } from 'react';
@@ -48,7 +51,7 @@ const Page = () => {
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
     if (!authUser) return;
-    createPost({
+    createDBPost({
       createdAt: Timestamp.now(),
       createdBy: getUserDocRef(authUser.uid),
       deletedAt: null,
@@ -64,7 +67,7 @@ const Page = () => {
   useEffect(() => {
     Promise.all(
       posts.map(async (post): Promise<Post> => {
-        const author = await getUser(post.createdBy.id);
+        const author = await getDBUser(post.createdBy.id);
         return {
           authorAvatarUrl: author.avatarUrl ?? '',
           authorName: author.displayName ?? '',

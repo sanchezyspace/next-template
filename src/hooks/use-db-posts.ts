@@ -1,4 +1,4 @@
-import { docRef, getPosts } from '@/stores/firestore/posts';
+import { docRef, getDBPosts } from '@/stores/firestore/posts';
 import { DBHookProps } from '@/types/db-hooks-props';
 import { DBPost } from '@/types/db-post';
 import { onSnapshot } from 'firebase/firestore';
@@ -10,7 +10,7 @@ export const useDBPosts = (options: DBHookProps) => {
 
   useEffect(() => {
     if (!options.realtime) {
-      getPosts().then((posts) => {
+      getDBPosts().then((posts) => {
         setPosts(posts);
         setLoading(false);
       });
