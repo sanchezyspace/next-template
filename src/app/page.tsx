@@ -8,6 +8,7 @@ export default function Page() {
       </h1>
       <p className="mb-4 text-lg text-gray-600">
         This is a template for Next.js (App Router) + TypeScript + Tailwind CSS
+        + Firebase
       </p>
       <p className="text-lg text-gray-600">
         We welcome contributions! Please visit our GitHub repository to
