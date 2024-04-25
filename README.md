@@ -1,3 +1,7 @@
+<p align='center'>
+  English | <a href='./docs/README_JA.md'>日本語</a>
+</p>
+
 # sanchezyspace Next.js Template
 
 This is a Next.js + TypeScript + Firebase project template, perfect for starting your new projects in sanchezyspace.
